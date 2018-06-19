@@ -19,4 +19,12 @@ export class DashboardComponent implements OnInit {
     this._router.navigate(['/introduction']);
   }
 
+  goToFlexLayout() {
+    this._router.navigate(['/flexlayout']);
+  }
+
+  goToTypografie() {
+    this._router.navigate(['typografie']);
+  }
+
 }
