@@ -1,0 +1,40 @@
+<div fxLayout="column" fxLayoutAlign="end" style="height: 64px; margin-left: 16px; margin-top:10px;">
+  <h2 class="mat-title" style="margin-bottom: 10px;">Inhaltsverzeichnis</h2>
+</div>
+<mat-nav-list>
+  <h2 mat-subheader>
+      Überblick
+    </h2>
+<a mat-list-item routerLink="/dashboard" routerLinkActive="active">
+  <mat-icon mat-list-icon>dashboard</mat-icon>
+  <h4 mat-line>Dashboard</h4>
+</a>
+<a mat-list-item routerLink="/introduction" routerLinkActive="active">
+    <mat-icon mat-list-icon>description</mat-icon>
+    <h4 mat-line>Einführung</h4>
+  </a>
+  <mat-divider></mat-divider>
+  <h2 mat-subheader>
+    Formatierung
+  </h2>
+<a mat-list-item routerLink="/flexlayout" routerLinkActive="active">
+    <mat-icon mat-list-icon>line_style</mat-icon>
+    <h4 mat-line>FlexLayout</h4>
+</a>
+<a mat-list-item routerLink="/typografie" routerLinkActive="active">
+    <mat-icon mat-list-icon>text_format</mat-icon>
+    <h4 mat-line>Typografie</h4>
+</a>
+<mat-divider></mat-divider>
+<h2 mat-subheader>
+    Weiteres
+  </h2>
+<a mat-list-item>
+    <mat-icon mat-list-icon>folder</mat-icon>
+    <h4 mat-line>Unterseite 2</h4>
+  </a>
+<a mat-list-item>
+    <mat-icon mat-list-icon>copyright</mat-icon>
+    <h4 mat-line>Impressum</h4>
+</a>
+</mat-nav-list>
