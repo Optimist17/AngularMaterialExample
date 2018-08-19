@@ -1,3 +1,4 @@
+import { WebClientService } from './services/web-client.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -19,8 +20,21 @@ import { IntroductionComponent } from './pages/introduction/introduction.compone
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutComponent } from './pages/flex-layout/flex-layout.component';
 import { TypografieComponent } from './pages/typografie/typografie.component';
+import { TodoExampleComponent } from './pages/todo-example/todo-example.component';
+import { UriService } from './services/uri.service';
+import { TodoService } from './services/todo/todo.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CreateTodoDialogComponent } from './dialogs/create-todo-dialog/create-todo-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
+  entryComponents: [
+    CreateTodoDialogComponent
+  ],
   declarations: [
     AppComponent,
     ToolbarComponent,
@@ -28,7 +42,9 @@ import { TypografieComponent } from './pages/typografie/typografie.component';
     DashboardComponent,
     IntroductionComponent,
     FlexLayoutComponent,
-    TypografieComponent
+    TypografieComponent,
+    TodoExampleComponent,
+    CreateTodoDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +59,19 @@ import { TypografieComponent } from './pages/typografie/typografie.component';
     MatDividerModule,
     FlexLayoutModule,
     AppRoutingModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
-  providers: [],
+  providers: [
+    WebClientService,
+    UriService,
+    TodoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

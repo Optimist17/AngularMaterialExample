@@ -1,3 +1,4 @@
+import { TodoExampleComponent } from './pages/todo-example/todo-example.component';
 import { TypografieComponent } from './pages/typografie/typografie.component';
 import { FlexLayoutComponent } from './pages/flex-layout/flex-layout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -10,7 +11,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'introduction', component: IntroductionComponent },
   { path: 'flexlayout', component: FlexLayoutComponent },
-  { path: 'typografie', component: TypografieComponent }
+  { path: 'typografie', component: TypografieComponent },
+  { path: 'todo', component: TodoExampleComponent }
 ];
 
 @NgModule({

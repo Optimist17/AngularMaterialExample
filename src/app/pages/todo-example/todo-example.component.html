@@ -1,0 +1,25 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxFill *ngIf="isLoadingData">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center top" fxFill *ngIf="!isLoadingData">
+  <mat-list fxFlex.xs="100" fxFlex.lt-lg="60" fxFlex="40" class="todo_list">
+    <mat-list-item>
+      <h3 mat-line mat-subheader>To Do's</h3>
+      <button mat-icon-button (click)="addTodo()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-list-item>
+    <mat-list-item *ngFor="let todo of todos">
+      <mat-icon mat-list-icon *ngIf="todo.isComplete">check_box</mat-icon>
+      <mat-icon mat-list-icon *ngIf="!todo.isComplete">check_box_outline_blank</mat-icon>
+      <h4 mat-line>{{todo.name}}</h4>
+      <button mat-icon-button (click)="completeTodo(todo.id)" [disabled]="todo.isComplete">
+        <mat-icon>check</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteTodo(todo.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+    </mat-list-item>
+  </mat-list>
+</div>
