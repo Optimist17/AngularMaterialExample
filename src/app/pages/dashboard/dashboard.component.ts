@@ -27,4 +27,8 @@ export class DashboardComponent implements OnInit {
     this._router.navigate(['typografie']);
   }
 
+  goToTodoExample() {
+    this._router.navigate(['/todo']);
+  }
+
 }
