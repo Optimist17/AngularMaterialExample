@@ -1,3 +1,4 @@
+import { UpdateTodosHubService } from './../../services/hubs/update-todos-hub.service';
 import { CreateTodoDialogOptions } from './../../dialogs/create-todo-dialog/create-todo-dialog-options';
 import { CreateTodoDialogComponent } from './../../dialogs/create-todo-dialog/create-todo-dialog.component';
 import { ITodoItem } from './../../models/todo/itodo-item';
@@ -19,6 +20,7 @@ export class TodoExampleComponent implements OnInit {
 
   constructor(
     private _service: TodoService,
+    private _hubService: UpdateTodosHubService,
     private _snackBar: MatSnackBar,
     private _dialog: MatDialog
   ) {
@@ -29,6 +31,15 @@ export class TodoExampleComponent implements OnInit {
 
   ngOnInit() {
     this.loadData();
+
+    this._hubService.connect().subscribe(() => {
+
+    });
+
+    this._hubService.todoItemChanged.subscribe((result) => {
+      this.todos = result;
+      console.log(result);
+    });
   }
 
   loadData() {

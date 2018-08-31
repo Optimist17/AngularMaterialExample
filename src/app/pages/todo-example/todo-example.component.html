@@ -6,7 +6,7 @@
   <mat-list fxFlex.xs="100" fxFlex.lt-lg="60" fxFlex="40" class="todo_list">
     <mat-list-item>
       <h3 mat-line mat-subheader>To Do's</h3>
-      <button mat-icon-button (click)="addTodo()">
+      <button mat-icon-button (click)="addTodo()" matTooltip="Element hinzufügen" matTooltipShowDelay="1000">
         <mat-icon>add</mat-icon>
       </button>
     </mat-list-item>
@@ -14,10 +14,10 @@
       <mat-icon mat-list-icon *ngIf="todo.isComplete">check_box</mat-icon>
       <mat-icon mat-list-icon *ngIf="!todo.isComplete">check_box_outline_blank</mat-icon>
       <h4 mat-line>{{todo.name}}</h4>
-      <button mat-icon-button (click)="completeTodo(todo.id)" [disabled]="todo.isComplete">
+      <button mat-icon-button (click)="completeTodo(todo.id)" [disabled]="todo.isComplete" matTooltip="Element abschließen" matTooltipShowDelay="1000">
         <mat-icon>check</mat-icon>
       </button>
-      <button mat-icon-button (click)="deleteTodo(todo.id)">
+      <button mat-icon-button (click)="deleteTodo(todo.id)" matTooltip="Element löschen" matTooltipShowDelay="1000">
           <mat-icon>delete</mat-icon>
         </button>
     </mat-list-item>

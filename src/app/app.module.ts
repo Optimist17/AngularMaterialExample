@@ -30,6 +30,7 @@ import { CreateTodoDialogComponent } from './dialogs/create-todo-dialog/create-t
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   entryComponents: [
@@ -65,7 +66,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatProgressSpinnerModule,
     MatDialogModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTooltipModule,
   ],
   providers: [
     WebClientService,
